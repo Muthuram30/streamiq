@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StreamIQ</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#stream"><span class="brand-mark">▶</span> streamiq</a>
+    <nav aria-label="Main navigation">
+      <button class="nav active" data-view="stream"><span>◧</span> Streaming</button>
+      <button class="nav" data-view="drive"><span>▤</span> My Drive</button>
+    </nav>
+    <div class="sidebar-bottom">Your personal video space</div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div class="mobile-brand">streamiq</div>
+      <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search videos" aria-label="Search videos"></div>
+      <span class="avatar" aria-label="Local library">S</span>
+    </header>
+
+    <section id="stream-view" class="view">
+      <div class="hero">
+        <div class="hero-content"><span class="eyebrow">YOUR STREAMING SPACE</span><h1>Watch what matters<br>to you.</h1><p>Your collection, ready when you are.</p><button class="primary" id="hero-play">Browse videos <span>→</span></button></div>
+        <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-play">▶</div></div>
+      </div>
+      <div class="section-heading" id="library-heading"><div><span class="eyebrow">THE COLLECTION</span><h2>For you</h2></div><span class="count" id="catalog-count">0 / 10 videos</span></div>
+      <p class="section-note">Add up to 10 video files to <code>data/catalog</code> to build your streaming collection.</p>
+      <div class="grid" id="catalog-grid"></div>
+    </section>
+
+    <section id="drive-view" class="view" hidden>
+      <div class="drive-intro"><span class="eyebrow">YOUR FILES</span><h1>My Drive</h1><p>Keep your videos in one place and play them anytime.</p></div>
+      <div class="drive-toolbar"><div><h2>My videos</h2><span class="count" id="drive-count">0 / 3 videos</span></div><label class="primary upload-button" for="file-input">＋ Upload video</label><input id="file-input" type="file" accept="video/mp4,video/webm,video/ogg,.mp4,.webm,.ogg" hidden></div>
+      <p class="section-note">MP4, WebM, or Ogg · Up to 1 GB per video · 3 videos maximum</p>
+      <div class="upload-progress" id="upload-progress" hidden>Uploading video… Please keep this page open.</div>
+      <div class="grid" id="drive-grid"></div>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <dialog id="player-dialog" aria-label="Video player">
+    <div class="player-head"><strong id="player-title"></strong><div class="player-options"><label for="quality">Quality</label><select id="quality"><option value="auto">Auto</option><option value="original">Original</option><option value="efficient">Data saver</option></select><button id="close-player" aria-label="Close player">✕</button></div></div>
+    <video id="player" controls playsinline preload="metadata"></video>
+  </dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>
