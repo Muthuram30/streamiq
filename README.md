@@ -1,5 +1,7 @@
 # StreamIQ
 
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![FFmpeg](https://img.shields.io/badge/FFmpeg-497820?logo=ffmpeg&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-196181?logo=sqlite&logoColor=white)
+
 StreamIQ is a local video library for a small, single-user collection. **For you** plays up to 10 videos from a curated folder, and **My Drive** stores up to three videos uploaded through the browser. A compact playback copy can reduce transferred bytes when the viewer chooses Data saver or the player detects a constrained connection.
 
 ## Features
